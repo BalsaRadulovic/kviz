@@ -6,7 +6,7 @@ if (localStorage.getItem('score') !== null) {
     localStorage.setItem('score', 0)
 }
 
-for (let i = 1; i <= 30; i++) {
+for (let i = 1; i <= 25; i++) {
     let levelState
     if (i <= parseInt(localStorage.getItem('score'))) {
         levelState = 'done'
