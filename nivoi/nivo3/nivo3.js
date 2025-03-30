@@ -1,4 +1,8 @@
+const nivo = 3
+const tacanOdgovor = 'merci'
+
 function checkAnswer() {
+    localStorage.setItem(`pokusaji${nivo}`, parseInt(localStorage.getItem(`pokusaji${nivo}`)) + 1);
     const answer = document.getElementById('answer-input') ? document.getElementById('answer-input').value.trim().toLowerCase() : null;
     const resultPopup = document.getElementById('result-popup');
     const overlay = document.getElementById('overlay');
@@ -10,10 +14,8 @@ function checkAnswer() {
     // Show overlay
     overlay.style.display = 'block';
 
-    const tacno = (answer === 'merci');
-
     // Show result in popup
-    if (tacno) {
+    if (answer === tacanOdgovor) {
         resultPopup.textContent = "Tačno!";
         resultPopup.style.backgroundColor = 'green';
     } else {
@@ -26,7 +28,14 @@ function checkAnswer() {
 
     // Wait for 3 seconds (3000 milliseconds) and then navigate to the home page
     setTimeout(() => {
-        if (tacno) localStorage.setItem('score', parseInt(localStorage.getItem('score')) + 1);
+        console.log(localStorage.getItem(`pokusaji${nivo}`))
+        if (answer === tacanOdgovor) {
+            if (parseInt(localStorage.getItem(`pokusaji${nivo}`)) === 1)
+                localStorage.setItem('score', parseInt(localStorage.getItem('score')) + 1);
+
+            localStorage.setItem('otkljucanoDo', parseInt(localStorage.getItem('otkljucanoDo')) + 1);
+        }
+
         window.location.href = '../../index.html'; // Redirect to the home page
-    }, 3000); // 3 seconds delay before redirect
+    }, 2000); // 3 seconds delay before redirect
 }

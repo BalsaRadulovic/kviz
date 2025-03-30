@@ -1,19 +1,28 @@
 let nivoi = document.querySelector('#nivoi')
+let dan = 3;
 
 if (localStorage.getItem('score') !== null) {
-    document.querySelector('#score').innerText = `poeni: ${localStorage.getItem('score')}`;
+    document.querySelector('#score').innerText = `poeni: ${localStorage.getItem('score')}/${dan}`;
 } else {
     localStorage.setItem('score', 0)
+    document.querySelector('#score').innerText = `poeni: ${localStorage.getItem('score')}/${dan}`;
+
+    localStorage.setItem('otkljucanoDo', 1);
 }
 
 for (let i = 1; i <= 25; i++) {
+    if (localStorage.getItem(`pokusaji${i}`) === null) localStorage.setItem(`pokusaji${i}`, 0);
+
     let levelState, text = ''
-    if (i <= parseInt(localStorage.getItem('score'))) {
+    if (i < parseInt(localStorage.getItem('otkljucanoDo'))) {
         levelState = 'done'
         text = '✅'
-    } else if (i == parseInt(localStorage.getItem('score'))+1) {
+    } else if (i == parseInt(localStorage.getItem('otkljucanoDo'))) {
         levelState = 'notdone'
         text = ''
+    } else if (i > dan) {
+        levelState = 'locked'
+        text = '⏳'
     } else {
         levelState = 'locked'
         text = '❌'
