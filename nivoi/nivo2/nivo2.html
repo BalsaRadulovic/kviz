@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivo 2</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="nivo2.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="question">
+            <h1>Hemingwaz je napisao najkraću priču na svijetu od samo šest riječi</h1>
+        </div>
+        <div class="options">
+            <button class="option" onclick="checkAnswer('True')">Tačno</button>
+            <button class="option" onclick="checkAnswer('False')">Netačno</button>
+        </div>
+        <div class="result">
+            <p id="result-text"></p>
+        </div>
+    </div>
+
+    <!-- Result Popup -->
+    <div id="result-popup"></div>
+
+    <!-- Darker Background Overlay -->
+    <div id="overlay"></div>
+
+</body>
+</html>
