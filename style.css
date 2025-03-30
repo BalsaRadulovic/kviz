@@ -1,5 +1,5 @@
 body {
-    background-image: url('img/kalendar.jpg');
+    background-image: url('img/kalendar.png');
     background-attachment: fixed; /* Makes the background stay static */
     background-size: 120% 100%;
     background-position: center center; 
@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     row-gap: 15px;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 button {
@@ -28,6 +28,9 @@ button {
     padding: 12px 20px;
     color: #fff;
     outline: none;
+    /* border: 2px solid black; */
+    border: none;
+    font-size: 25px;
     transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -42,18 +45,21 @@ button:active {
 }
 
 .notdone {
-    border: 1px solid navy;
-    background-color: #3498db;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .done {
-    border: 1px solid green;
-    background-color: rgb(106, 255, 47);
+    background-color: rgba(0, 0, 0, 0);
     pointer-events: none;
 }
 
 .locked {
-    border: 1px solid brown;
-    background-color: burlywood;
+    background-color: rgba(0, 0, 0, 0);
     pointer-events: none;
+}
+
+#score {
+    margin-top: 0;
+    position: absolute;
+    font-size: 30px;
 }

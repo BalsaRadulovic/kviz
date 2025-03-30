@@ -7,14 +7,17 @@ if (localStorage.getItem('score') !== null) {
 }
 
 for (let i = 1; i <= 25; i++) {
-    let levelState
+    let levelState, text = ''
     if (i <= parseInt(localStorage.getItem('score'))) {
         levelState = 'done'
+        text = '✅'
     } else if (i == parseInt(localStorage.getItem('score'))+1) {
         levelState = 'notdone'
+        text = ''
     } else {
         levelState = 'locked'
+        text = '❌'
     }
 
-    nivoi.innerHTML += `<button class="nivo ${levelState}" onclick="window.location.href='./nivoi/nivo${i}/nivo${i}.html';">${i}</button>`
+    nivoi.innerHTML += `<button class="nivo ${levelState}" onclick="window.location.href='./nivoi/nivo${i}/nivo${i}.html';">${text}</button>`
 }
