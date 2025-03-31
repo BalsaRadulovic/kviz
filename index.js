@@ -1,5 +1,8 @@
 let nivoi = document.querySelector('#nivoi')
-let dan = 3;
+
+const currentTime = new Date();
+let dan = 5 + Math.max(0, parseInt((currentTime.getHours()*60 + currentTime.getMinutes() - (18*60 + 25)) / 10));
+// 18:25
 
 if (localStorage.getItem('score') !== null) {
     document.querySelector('#score').innerText = `poeni: ${localStorage.getItem('score')}/${dan}`;
@@ -17,12 +20,12 @@ for (let i = 1; i <= 25; i++) {
     if (i < parseInt(localStorage.getItem('otkljucanoDo'))) {
         levelState = 'done'
         text = '✅'
-    } else if (i == parseInt(localStorage.getItem('otkljucanoDo'))) {
-        levelState = 'notdone'
-        text = ''
     } else if (i > dan) {
         levelState = 'locked'
         text = '⏳'
+    } else if (i == parseInt(localStorage.getItem('otkljucanoDo'))) {
+        levelState = 'notdone'
+        text = ''
     } else {
         levelState = 'locked'
         text = '❌'
