@@ -1,5 +1,5 @@
-const nivo = 2
-const tacanOdgovor = 'A'
+const nivo = 7 
+const tacanOdgovor = 'C'
 
 function checkAnswer(answer) {
     localStorage.setItem(`pokusaji${nivo}`, parseInt(localStorage.getItem(`pokusaji${nivo}`)) + 1);

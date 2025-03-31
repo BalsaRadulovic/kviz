@@ -1,8 +1,9 @@
-const nivo = 2
-const tacanOdgovor = 'A'
+const nivo = 3
+const tacanOdgovor = 'merci'
 
-function checkAnswer(answer) {
+function checkAnswer() {
     localStorage.setItem(`pokusaji${nivo}`, parseInt(localStorage.getItem(`pokusaji${nivo}`)) + 1);
+    const answer = document.getElementById('answer-input') ? document.getElementById('answer-input').value.trim().toLowerCase() : null;
     const resultPopup = document.getElementById('result-popup');
     const overlay = document.getElementById('overlay');
     const options = document.querySelectorAll('.option');

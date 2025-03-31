@@ -1,4 +1,4 @@
-const nivo = 2
+const nivo = 6  
 const tacanOdgovor = 'A'
 
 function checkAnswer(answer) {

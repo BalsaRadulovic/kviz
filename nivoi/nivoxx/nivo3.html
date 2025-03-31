@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivo 2</title>
+    <title>Nivo 3</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="nivo2.js"></script>
+    <script src="nivo3.js"></script>
 </head>
 <body>
     <div class="quiz-container">
         <div class="question">
-            <h1>U španskom jeziku, reč "tortilla" znači "omlet".</h1>
+            <h1>'Hvala' se na francuskom kaze:</h1>
         </div>
-        <div class="options">
-            <button class="option" onclick="checkAnswer('True')">Tačno</button>
-            <button class="option" onclick="checkAnswer('False')">Netačno</button>
+        <div class="input-field">
+            <input type="text" id="answer-input" placeholder="Type your answer here">
+            <button class="option" onclick="checkAnswer()">Submit</button>
         </div>
         <div class="result">
             <p id="result-text"></p>
@@ -26,6 +26,6 @@
 
     <!-- Darker Background Overlay -->
     <div id="overlay"></div>
-
+    
 </body>
 </html>
