@@ -1,9 +1,7 @@
 let nivoi = document.querySelector('#nivoi')
 
 const currentTime = new Date();
-// let dan = 5 + Math.max(0, parseInt((currentTime.getHours()*60 + currentTime.getMinutes() - (18*60 + 25)) / 10));
-let dan = 28
-// 18:25
+let dan = currentTime.getHours();
 
 if (localStorage.getItem('score') !== null) {
     document.querySelector('#score').innerText = `poeni: ${localStorage.getItem('score')}/${dan}`;
