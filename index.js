@@ -1,8 +1,8 @@
 let nivoi = document.querySelector('#nivoi')
 
-const startDate = new Date("2025-04-03T00:00:00")
+const startDate = new Date('2025-04-03T00:00:00')
 const currentDate = new Date();
-let dan = 1 + Math.floor((currentDate - startDate) / (1000 * 3600 * 24)) + 22;
+let dan = 1 + Math.floor((currentDate - startDate) / (1000 * 3600 * 24));
 
 if (localStorage.getItem('score') !== null) {
     document.querySelector('#score').innerText = `poeni: ${localStorage.getItem('score')}/${dan}`;
@@ -37,3 +37,29 @@ for (let i = 1; i <= 28; i++) {
 
     nivoi.innerHTML += `<button class="nivo ${levelState}" onclick="window.location.href='./nivoi/nivo${i}/nivo${i}.html';">${text}</button>`
 }
+
+// vrijeme do sledeceg zadatka:
+
+function formatTime(hours, minutes, seconds) {
+    // Pad hours, minutes, and seconds with leading zeros if needed
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(seconds).padStart(2, '0');
+    
+    // Return the formatted time as "HH:MM:SS"
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
+const timeleft = document.querySelector('h3')
+setInterval(() => {
+    const currDate = new Date()
+    const thisDay = new Date(2025, currDate.getMonth(), currDate.getDate())
+
+    const mills = thisDay - currDate + (1000 * 3600 * 24)
+    const formatted = formatTime(parseInt(mills/(1000*3600)), parseInt((mills%(1000*3600))/(1000*60)), parseInt((mills%(1000*60))/1000))
+    timeleft.innerHTML = `novo pitanje za: <span>${formatted}</span>`
+
+    if (parseInt(mills/(1000 * 3600)) < 10) {
+        timeleft.querySelector('span').style.color = parseInt(mills/1000)%2 ? 'black' : 'red'
+    }
+}, 1000)
