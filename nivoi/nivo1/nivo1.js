@@ -25,14 +25,14 @@ function checkAnswer(answer) {
     // Show the result popup
     resultPopup.style.display = 'block';
 
-    // Wait for 3 seconds (3000 milliseconds) and then navigate to the home page
     setTimeout(() => {
         console.log(localStorage.getItem(`pokusaji${nivo}`))
-        if (answer === tacanOdgovor) {
+        if (!localStorage.getItem(`rijesen${nivo}`) && answer === tacanOdgovor) {
             if (parseInt(localStorage.getItem(`pokusaji${nivo}`)) === 1)
                 localStorage.setItem('score', parseInt(localStorage.getItem('score')) + 1);
 
             localStorage.setItem('otkljucanoDo', parseInt(localStorage.getItem('otkljucanoDo')) + 1);
+            localStorage.setItem(`rijesen${nivo}`, 'rijesen');
         }
 
         window.location.href = '../../index.html'; // Redirect to the home page

@@ -1,7 +1,8 @@
 let nivoi = document.querySelector('#nivoi')
 
 const currentTime = new Date();
-let dan = 5 + Math.max(0, parseInt((currentTime.getHours()*60 + currentTime.getMinutes() - (18*60 + 25)) / 10));
+// let dan = 5 + Math.max(0, parseInt((currentTime.getHours()*60 + currentTime.getMinutes() - (18*60 + 25)) / 10));
+let dan = 17
 // 18:25
 
 if (localStorage.getItem('score') !== null) {
@@ -13,7 +14,7 @@ if (localStorage.getItem('score') !== null) {
     localStorage.setItem('otkljucanoDo', 1);
 }
 
-for (let i = 1; i <= 25; i++) {
+for (let i = 1; i <= 28; i++) {
     if (localStorage.getItem(`pokusaji${i}`) === null) localStorage.setItem(`pokusaji${i}`, 0);
 
     let levelState, text = ''
