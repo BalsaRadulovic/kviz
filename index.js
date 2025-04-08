@@ -1,6 +1,6 @@
 let nivoi = document.querySelector('#nivoi')
 
-const startDate = new Date('2025-04-03T00:00:00')
+const startDate = new Date('2025-04-09T00:00:00')
 const currentDate = new Date();
 let dan = 1 + Math.floor((currentDate - startDate) / (1000 * 3600 * 24));
 
