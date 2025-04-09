@@ -1,8 +1,14 @@
 let nivoi = document.querySelector('#nivoi')
 
-const startDate = new Date('2025-04-09T00:00:00')
+const startDate = new Date('2025-04-10T00:00:00')
 const currentDate = new Date();
 let dan = 1 + Math.floor((currentDate - startDate) / (1000 * 3600 * 24));
+
+// uradi reset jer je nekima ostalo sejvovano od proslih verzija
+if (localStorage.getItem('reseted') === null) {
+    localStorage.clear()
+    localStorage.setItem('reseted', true)
+}
 
 if (localStorage.getItem('score') !== null) {
     document.querySelector('#score').innerText = `poeni: ${localStorage.getItem('score')}/${dan}`;
