@@ -34,6 +34,7 @@ function checkAnswer() {
                 localStorage.setItem('score', parseInt(localStorage.getItem('score')) + 1);
 
             localStorage.setItem('otkljucanoDo', parseInt(localStorage.getItem('otkljucanoDo')) + 1);
+            localStorage.setItem(`rijesen${nivo}`, 'rijesen');
         }
 
         window.location.href = '../../index.html'; // Redirect to the home page
