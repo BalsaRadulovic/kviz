@@ -6,9 +6,9 @@ const currentDate = new Date();
 let dan = 28
 
 // uradi reset jer je nekima ostalo sejvovano od proslih verzija
-if (localStorage.getItem('reseted') === null) {
+if (localStorage.getItem('reseted2') === null) {
     localStorage.clear()
-    localStorage.setItem('reseted', true)
+    localStorage.setItem('reseted2', true)
 }
 
 if (localStorage.getItem('score') !== null) {
