@@ -5,16 +5,16 @@ const currentDate = new Date();
 // let dan = 1 + Math.floor((currentDate - startDate) / (1000 * 3600 * 24));
 let dan = 28
 
-if (parseInt(localStorage.getItem('score')) == 28) {
+if (parseInt(localStorage.getItem('score')) >= 3) {
     document.querySelector('#message').style.display = 'block'
 } else {
     document.querySelector('#message').style.display = 'none'
 }
 
 // uradi reset jer je nekima ostalo sejvovano od proslih verzija
-if (localStorage.getItem('reseted3') === null) {
+if (localStorage.getItem('reseted4') === null) {
     localStorage.clear()
-    localStorage.setItem('reseted3', true)
+    localStorage.setItem('reseted4', true)
 }
 
 if (localStorage.getItem('score') !== null) {
