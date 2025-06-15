@@ -1,5 +1,5 @@
 const nivo = 25
-const tacanOdgovor = 'balalajka'
+const tacanOdgovor = 'balalaika'
 
 function checkAnswer() {
     localStorage.setItem(`pokusaji${nivo}`, parseInt(localStorage.getItem(`pokusaji${nivo}`)) + 1);
@@ -16,10 +16,10 @@ function checkAnswer() {
 
     // Show result in popup
     if (answer === tacanOdgovor) {
-        resultPopup.textContent = "Tačno!";
+        resultPopup.textContent = "Correct!";
         resultPopup.style.backgroundColor = 'green';
     } else {
-        resultPopup.textContent = "Netačno!";
+        resultPopup.textContent = "Incorrect!";
         resultPopup.style.backgroundColor = 'red';
     }
 
@@ -30,8 +30,7 @@ function checkAnswer() {
     setTimeout(() => {
         console.log(localStorage.getItem(`pokusaji${nivo}`))
         if (answer === tacanOdgovor) {
-            if (parseInt(localStorage.getItem(`pokusaji${nivo}`)) === 1)
-                localStorage.setItem('score', parseInt(localStorage.getItem('score')) + 1);
+            localStorage.setItem('score', parseInt(localStorage.getItem('score')) + 1);
 
             localStorage.setItem('otkljucanoDo', parseInt(localStorage.getItem('otkljucanoDo')) + 1);
             localStorage.setItem(`rijesen${nivo}`, 'rijesen');
